@@ -1,1 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata - Nuansa Cokelat</title>
+    <style>
+        /* TEMA WARNA COKELAT */
+        :root {
+            --bg-color: #fdf5e6;      /* Cream Muda */
+            --accent-light: #d7ccc8;  /* Cokelat Susu */
+            --accent-dark: #8d6e63;   /* Cokelat Kayu */
+            --text-color: #4e342e;    /* Cokelat Tua */
+            --white: #ffffff;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .profile-card {
+            background-color: var(--white);
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 1px solid var(--accent-light);
+        }
+
+        .header-bg {
+            background-color: var(--accent-light);
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            background-color: var(--white);
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            margin-bottom: -60px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            padding: 80px 30px 30px 30px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--accent-dark);
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #a1887f;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        table tr {
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        table tr:last-child {
+            border-bottom: none;
+        }
+
+        table td {
+            padding: 12px 5px;
+            font-size: 15px;
+        }
+
+        .label {
+            font-weight: bold;
+            color: var(--accent-dark);
+            width: 40%;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            background-color: var(--accent-dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .btn-back:hover {
+            background-color: #5d4037;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="header-bg">
+            <img src="https://via.placeholder.com/150" alt="Foto Profil" class="profile-img">
+        </div>
+
+        <div class="content">
+            <h1>Nama Lengkap Anda</h1>
+            <p class="tagline">Web Designer & Creative Learner</p>
+
+            <table>
+                <tr>
+                    <td class="label">Tempat Lahir</td>
+                    <td>Jakarta, Indonesia</td>
+                </tr>
+                <tr>
+                    <td class="label">Tanggal Lahir</td>
+                    <td>1 Januari 2000</td>
+                </tr>
+                <tr>
+                    <td class="label">Jenis Kelamin</td>
+                    <td>Laki-laki / Perempuan</td>
+                </tr>
+                <tr>
+                    <td class="label">Pendidikan</td>
+                    <td>S1 Teknik Informatika</td>
+                </tr>
+                <tr>
+                    <td class="label">Keahlian</td>
+                    <td>HTML, CSS, UI Design</td>
+                </tr>
+                <tr>
+                    <td class="label">Hobi</td>
+                    <td>Membaca & Fotografi</td>
+                </tr>
+            </table>
+
+            <a href="index.html" class="btn-back">Kembali ke Home</a>
+        </div>
+    </div>
+
+</body>
+</html>
