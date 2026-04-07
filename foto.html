@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto - Nuansa Cokelat</title>
+    <style>
+        /* TEMA WARNA COKELAT */
+        :root {
+            --bg-color: #fdf5e6;      /* Krem / Old Lace */
+            --accent-light: #d7ccc8;  /* Cokelat Susu */
+            --accent-dark: #8d6e63;   /* Cokelat Kayu */
+            --text-dark: #4e342e;     /* Cokelat Tua */
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--accent-dark);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .underline {
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-dark);
+            margin: 0 auto 40px;
+            border-radius: 2px;
+        }
+
+        /* GRID GALERI */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            background-color: var(--white);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid var(--accent-light);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Menjaga foto tidak gepeng */
+            border-radius: 10px;
+        }
+
+        .caption {
+            margin-top: 12px;
+            font-weight: bold;
+            color: var(--accent-dark);
+            font-size: 14px;
+        }
+
+        .btn-nav {
+            margin-top: 50px;
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--text-dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            h1 { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Koleksi Foto</h1>
+        <div class="underline"></div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=1" alt="Foto Liburan">
+                <div class="caption">Momen Liburan 1</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=2" alt="Foto Hobi">
+                <div class="caption">Aktivitas Hobi</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=3" alt="Foto Alam">
+                <div class="caption">Pemandangan Alam</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=4" alt="Foto Kantor">
+                <div class="caption">Ruang Kerja</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=5" alt="Foto Kafe">
+                <div class="caption">Waktu Bersantai</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=6" alt="Foto Seni">
+                <div class="caption">Karya Seni</div>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn-nav">Kembali ke Home</a>
+    </div>
+
+</body>
+</html>
