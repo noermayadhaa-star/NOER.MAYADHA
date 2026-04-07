@@ -3,157 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata - Nuansa Cokelat</title>
+    <title>Biodata Profil - Nuansa Cokelat</title>
     <style>
-        /* TEMA WARNA COKELAT */
+        /* TEMA WARNA COKELAT MUDA */
         :root {
-            --bg-color: #fdf5e6;      /* Cream Muda */
-            --accent-light: #d7ccc8;  /* Cokelat Susu */
-            --accent-dark: #8d6e63;   /* Cokelat Kayu */
-            --text-color: #4e342e;    /* Cokelat Tua */
-            --white: #ffffff;
+            --bg-body: #fdf5e6;      /* Krem / Old Lace */
+            --card-bg: #ffffff;      /* Putih Bersih */
+            --primary: #8d6e63;      /* Cokelat Kayu */
+            --secondary: #d7ccc8;    /* Cokelat Susu */
+            --text-dark: #3e2723;    /* Cokelat Tua */
+            --accent: #a1887f;       /* Cokelat Medium */
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg-body);
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
+            color: var(--text-dark);
         }
 
-        .profile-card {
-            background-color: var(--white);
+        .card {
+            background: var(--card-bg);
             width: 90%;
-            max-width: 500px;
-            border-radius: 20px;
+            max-width: 450px;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border: 1px solid var(--accent-light);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid var(--secondary);
         }
 
-        .header-bg {
-            background-color: var(--accent-light);
+        .header-banner {
+            background: var(--secondary);
             height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
+            position: relative;
         }
 
+        /* FOTO PROFIL */
         .profile-img {
-            width: 120px;
-            height: 120px;
-            background-color: var(--white);
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 5px solid var(--white);
-            margin-bottom: -60px;
+            border: 6px solid var(--card-bg);
             object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            bottom: -65px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #eee;
         }
 
         .content {
-            padding: 80px 30px 30px 30px;
-            text-align: center;
+            padding: 80px 30px 30px;
         }
 
         h1 {
             margin: 0;
-            font-size: 24px;
-            color: var(--accent-dark);
+            font-size: 26px;
+            color: var(--primary);
         }
 
-        .tagline {
+        .job-title {
             font-size: 14px;
-            color: #a1887f;
+            color: var(--accent);
+            letter-spacing: 1px;
             margin-bottom: 20px;
-            font-style: italic;
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
-        table {
+        .bio-table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
-        table tr {
-            border-bottom: 1px solid #f1f1f1;
+        .bio-table tr {
+            border-bottom: 1px solid #f5f5f5;
         }
 
-        table tr:last-child {
-            border-bottom: none;
-        }
-
-        table td {
+        .bio-table td {
             padding: 12px 5px;
             font-size: 15px;
         }
 
         .label {
             font-weight: bold;
-            color: var(--accent-dark);
-            width: 40%;
+            color: var(--primary);
+            width: 35%;
         }
 
-        .btn-back {
-            display: inline-block;
+        .social-icons {
             margin-top: 25px;
-            padding: 10px 20px;
-            background-color: var(--accent-dark);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 14px;
-            transition: background 0.3s;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
-        .btn-back:hover {
-            background-color: #5d4037;
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: var(--text-dark);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <div class="profile-card">
-        <div class="header-bg">
-            <img src="https://via.placeholder.com/150" alt="Foto Profil" class="profile-img">
+    <div class="card">
+        <div class="header-banner">
+            <img src="https://picsum.photos/200" alt="Foto Profil" class="profile-img">
         </div>
 
         <div class="content">
-            <h1>Nama Lengkap Anda</h1>
-            <p class="tagline">Web Designer & Creative Learner</p>
+            <h1>Nama Anda Di Sini</h1>
+            <p class="job-title">Web Design & Developer</p>
 
-            <table>
+            <table class="bio-table">
                 <tr>
-                    <td class="label">Tempat Lahir</td>
-                    <td>Jakarta, Indonesia</td>
+                    <td class="label">Panggilan</td>
+                    <td>: Nama Panggilan</td>
                 </tr>
                 <tr>
-                    <td class="label">Tanggal Lahir</td>
-                    <td>1 Januari 2000</td>
-                </tr>
-                <tr>
-                    <td class="label">Jenis Kelamin</td>
-                    <td>Laki-laki / Perempuan</td>
+                    <td class="label">TTL</td>
+                    <td>: Jakarta, 12 Mei 2005</td>
                 </tr>
                 <tr>
                     <td class="label">Pendidikan</td>
-                    <td>S1 Teknik Informatika</td>
+                    <td>: SMK / Mahasiswa</td>
                 </tr>
                 <tr>
-                    <td class="label">Keahlian</td>
-                    <td>HTML, CSS, UI Design</td>
+                    <td class="label">Alamat</td>
+                    <td>: Banjarmasin, Indonesia</td>
                 </tr>
                 <tr>
                     <td class="label">Hobi</td>
-                    <td>Membaca & Fotografi</td>
+                    <td>: Coding & Ngopi</td>
                 </tr>
             </table>
 
-            <a href="index.html" class="btn-back">Kembali ke Home</a>
+            <div class="social-icons">
+                <a href="index.html" class="btn">Kembali ke Home</a>
+            </div>
         </div>
     </div>
 
