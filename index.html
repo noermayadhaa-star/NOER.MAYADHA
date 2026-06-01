@@ -17,43 +17,45 @@
             color: #333;
         }
         .container {
-            max-width: 1250px;
+            max-width: 1300px;
             margin: 30px auto;
             padding: 20px;
         }
         h1 {
             color: #2952cc;
             text-align: center;
-            margin-bottom: 35px;
-            font-size: 28px;
+            margin-bottom: 40px;
+            font-size: 29px;
         }
         .section {
             background: white;
             border-radius: 15px;
-            padding: 25px;
+            padding: 30px;
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
         .section h2 {
             color: #2952cc;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
         }
         .btn {
             display: inline-block;
             background: #2952cc;
             color: white;
-            padding: 12px 22px;
-            border-radius: 8px;
+            padding: 14px 24px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
-            margin: 8px 5px;
+            margin: 10px 5px;
             transition: 0.3s;
+            font-size: 1.05rem;
         }
         .btn:hover {
             background: #1e40a0;
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
         .btn-success {
             background: #28a745;
@@ -61,23 +63,15 @@
         .btn-success:hover {
             background: #218838;
         }
+        .btn-info {
+            background: #17a2b8;
+        }
         iframe {
             width: 100%;
-            height: 720px;
+            height: 680px;
             border: 2px solid #ddd;
             border-radius: 10px;
-            margin-top: 10px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .info {
-            background: #e3f2fd;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -86,56 +80,61 @@
 <div class="container">
     <h1><i class="fas fa-wallet"></i> Simpan Pinjam Anggota POKLAHSAR</h1>
 
-    <!-- Form Pendaftaran Simpan Pinjam -->
+    <!-- 1. Form Pendaftaran -->
     <div class="section">
-        <h2><i class="fas fa-user-plus"></i> Form Pendaftaran Simpan Pinjam</h2>
-        <p>Isi formulir pendaftaran simpan pinjam anggota di bawah ini:</p>
+        <h2><i class="fas fa-user-plus"></i> 1. Form Pendaftaran Simpan Pinjam</h2>
         <a href="https://forms.gle/SVU4L2kc4JeXphMfA" target="_blank" class="btn">
             <i class="fas fa-edit"></i> Isi Form Pendaftaran
         </a>
     </div>
 
-    <!-- Hasil Spreadsheet Pendaftaran -->
+    <!-- 2. Data Pendaftaran -->
     <div class="section">
-        <h2><i class="fas fa-table"></i> Data Pendaftaran Simpan Pinjam</h2>
-        <iframe src="https://docs.google.com/spreadsheets/d/1xkkW0MT_WndFe1zq9aDmquDkALTPnsM-vXsUQECYGmM/edit?usp=sharing" 
-                frameborder="0" allowfullscreen></iframe>
+        <h2><i class="fas fa-table"></i> 2. Data Pendaftaran Simpan Pinjam</h2>
+        <a href="https://docs.google.com/spreadsheets/d/1xkkW0MT_WndFe1zq9aDmquDkALTPnsM-vXsUQECYGmM/edit?usp=sharing" 
+           target="_blank" class="btn">
+            <i class="fas fa-table"></i> Lihat Data Spreadsheet
+        </a>
     </div>
 
-    <!-- Form Kepuasan -->
+    <!-- 3. Visualisasi Pendaftaran -->
     <div class="section">
-        <h2><i class="fas fa-smile"></i> Survey Tingkat Kepuasan Simpan Pinjam</h2>
-        <p>Berikan penilaian terhadap layanan simpan pinjam:</p>
+        <h2><i class="fas fa-chart-pie"></i> 3. Visualisasi Data Pendaftaran</h2>
+        <a href="https://datastudio.google.com/reporting/6995eabe-d8fe-48eb-87cb-c32c4c0bf9e7" 
+           target="_blank" class="btn btn-info">
+            <i class="fas fa-chart-bar"></i> Lihat Dashboard Looker Studio
+        </a>
+    </div>
+
+    <!-- 4. Survey Kepuasan -->
+    <div class="section">
+        <h2><i class="fas fa-smile"></i> 4. Survey Tingkat Kepuasan</h2>
         <a href="https://forms.gle/jDrarFrtbcEn9kAc9" target="_blank" class="btn btn-success">
             <i class="fas fa-poll"></i> Isi Survey Kepuasan
         </a>
     </div>
 
-    <!-- Hasil Spreadsheet Kepuasan -->
+    <!-- 5. Data Survey Kepuasan -->
     <div class="section">
-        <h2><i class="fas fa-table"></i> Data Survey Kepuasan</h2>
-        <iframe src="https://docs.google.com/spreadsheets/d/15VXtdYKqxzrwvmAMjjYeTardwSK3BtnH74FnkrKn4K8/edit?usp=sharing" 
-                frameborder="0" allowfullscreen></iframe>
+        <h2><i class="fas fa-table"></i> 5. Data Survey Kepuasan</h2>
+        <a href="https://docs.google.com/spreadsheets/d/15VXtdYKqxzrwvmAMjjYeTardwSK3BtnH74FnkrKn4K8/edit?usp=sharing" 
+           target="_blank" class="btn">
+            <i class="fas fa-table"></i> Lihat Data Spreadsheet Kepuasan
+        </a>
     </div>
 
-    <!-- Looker Studio - Pendaftaran -->
+    <!-- 6. Visualisasi Kepuasan -->
     <div class="section">
-        <h2><i class="fas fa-chart-pie"></i> Visualisasi Data Pendaftaran (Looker Studio)</h2>
-        <iframe src="https://datastudio.google.com/reporting/6995eabe-d8fe-48eb-87cb-c32c4c0bf9e7" 
-                frameborder="0" allowfullscreen></iframe>
+        <h2><i class="fas fa-chart-bar"></i> 6. Visualisasi Survey Kepuasan</h2>
+        <a href="https://datastudio.google.com/reporting/42bad7b9-47dd-4825-9d78-8dae41d13904" 
+           target="_blank" class="btn btn-info">
+            <i class="fas fa-chart-bar"></i> Lihat Dashboard Looker Studio
+        </a>
     </div>
 
-    <!-- Looker Studio - Kepuasan -->
+    <!-- 7. Hasil Analisis -->
     <div class="section">
-        <h2><i class="fas fa-chart-bar"></i> Visualisasi Survey Kepuasan (Looker Studio)</h2>
-        <iframe src="https://datastudio.google.com/reporting/42bad7b9-47dd-4825-9d78-8dae41d13904" 
-                frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <!-- Hasil Analisis Excel -->
-    <div class="section">
-        <h2><i class="fas fa-file-excel"></i> Hasil Analisis Simpan Pinjam</h2>
-        <p>Download atau lihat file analisis lengkap dalam bentuk Excel:</p>
+        <h2><i class="fas fa-file-excel"></i> 7. Hasil Analisis Simpan Pinjam</h2>
         <a href="https://docs.google.com/spreadsheets/d/1fiwfP9m6EPaaA5MUommdlJjq8MmTcdPS/edit?usp=sharing" 
            target="_blank" class="btn">
             <i class="fas fa-download"></i> Lihat Hasil Analisis Excel
