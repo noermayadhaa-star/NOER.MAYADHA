@@ -124,7 +124,7 @@ body {
 .btn-excel:hover { background: #137333; color: white; }
 .btn-looker { background: #fef7e0; color: #b06000; border-color: #feefc3; }
 .btn-looker:hover { background: #b06000; color: white; }
-/* ================= DASHBOARD ================= */
+/* ================= DASHBOARD TABS ================= */
 .dashboard-container {
     background: white;
     padding: 25px;
@@ -161,7 +161,7 @@ body {
 .iframe-wrapper {
     position: relative;
     width: 100%;
-    height: 650px;
+    height: 600px;
     border: 1px solid #eee;
     border-radius: 8px;
     overflow: hidden;
@@ -206,7 +206,7 @@ table tbody tr:hover {
     .sidebar { width: 100%; height: auto; position: relative; }
     .main { margin-left: 0; width: 100%; }
     body { flex-direction: column; }
-    .iframe-wrapper { height: 500px; }
+    .iframe-wrapper { height: 450px; }
 }
 </style>
 </head>
@@ -239,6 +239,7 @@ table tbody tr:hover {
        
         <h2 class="section-title"><i class="fas fa-link"></i> Integrasi Data Simpan Pinjam</h2>
        
+        <!-- KUMPULAN CARD -->
         <div class="grid-container">
             <div class="data-card">
                 <h3><i class="fas fa-user-plus"></i> Form Pendaftaran</h3>
@@ -297,7 +298,7 @@ table tbody tr:hover {
             </div>
         </div>
 
-        <!-- ================= VISUALISASI DASHBOARD INTERAKTIF ================= -->
+        <!-- LIVE DASHBOARD -->
         <h2 class="section-title"><i class="fas fa-chart-bar"></i> Visualisasi Dashboard Interaktif</h2>
         <div class="dashboard-container">
             <div class="tab-menu">
@@ -309,42 +310,48 @@ table tbody tr:hover {
                 </button>
             </div>
             
-            <!-- Dashboard Pendaftaran -->
             <div id="dashboard-pendaftaran" class="tab-content">
                 <div class="iframe-wrapper">
-                    <iframe src="https://datastudio.google.com/embed/reporting/4e530b75-807b-45ad-b1c1-61998a520280/page/page_12345" 
-                            frameborder="0" 
-                            style="border:0" 
-                            allowfullscreen 
-                            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+                    <iframe src="https://datastudio.google.com/embed/reporting/4e530b75-807b-45ad-b1c1-61998a520280/page/page_12345" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
             
-            <!-- Dashboard Kepuasan -->
-            <div id="dashboard-pendaftaran" class="tab-content">
+            <div id="dashboard-kepuasan" class="tab-content" style="display: none;">
                 <div class="iframe-wrapper">
-                    <iframe src="https://datastudio.google.com/reporting/355c4ec4-cc48-4598-b9c4-e5311d4aa93e" 
-                            frameborder="0" 
-                            style="border:0" 
-                            allowfullscreen 
-                            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+                    <iframe src="https://datastudio.google.com/reporting/355c4ec4-cc48-4598-b9c4-e5311d4aa93e" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
+        </div>
+
+        <!-- TABEL (bisa dihapus atau diisi notulensi simpan pinjam nanti) -->
+        <h2 class="section-title"><i class="fas fa-book-open"></i> Catatan & Arsip Simpan Pinjam</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Tanggal</th>
+                        <th>Keterangan</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Anda bisa isi data nanti -->
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
 <script>
 function switchDashboard(evt, dashboardId) {
-    // Sembunyikan semua tab
     document.querySelectorAll(".tab-content").forEach(content => {
         content.style.display = "none";
     });
-    // Hilangkan active dari semua button
     document.querySelectorAll(".tab-btn").forEach(btn => {
         btn.classList.remove("active");
     });
-    // Tampilkan yang dipilih
     document.getElementById(dashboardId).style.display = "block";
     evt.currentTarget.classList.add("active");
 }
