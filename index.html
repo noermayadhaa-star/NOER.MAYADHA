@@ -3,145 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simpan Pinjam Anggota - POKLAHSAR</title>
+    <title>Notulensi & Integrasi Data - POKLAHSAR</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
         }
-        body {
-            background: #f4f7fc;
-            color: #333;
+        body{
+            background:#f0f4f8;
         }
-        .container {
-            max-width: 1300px;
-            margin: 30px auto;
-            padding: 20px;
+        header{
+            background:#1e40af;
+            color:white;
+            padding:30px;
+            text-align:center;
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
         }
-        h1 {
-            color: #2952cc;
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 29px;
+        header h1{
+            font-size:29px;
+            margin-bottom:8px;
         }
-        .section {
+        header p{
+            opacity:.95;
+            font-size:15.5px;
+        }
+        .container{
+            max-width:1250px;
+            margin:auto;
+            padding:30px 20px;
+        }
+        .section-title{
+            text-align:center;
+            color:#1e40af;
+            margin-bottom:35px;
+            font-size:27px;
+        }
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:20px;
+        }
+        .card{
+            background:white;
+            border-radius:15px;
+            padding:25px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.1);
+            transition:.3s;
+            border:1px solid #bfdbfe;
+        }
+        .card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 10px 25px rgba(30,64,175,0.15);
+        }
+        .card a{
+            text-decoration:none;
+            color:#1e2937;
+            display:block;
+        }
+        .card i{
+            font-size:42px;
+            color:#1e40af;
+            margin-bottom:15px;
+        }
+        .card h3{
+            color:#1e40af;
+            margin-bottom:10px;
+        }
+        .card p{
+            color:#475569;
+            line-height:1.6;
+        }
+        .info{
+            background:white;
+            margin-top:40px;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.1);
+            border:1px solid #bfdbfe;
+        }
+        .info h2{
+            color:#1e40af;
+        }
+
+        /* Tabel Notulensi */
+        .table-container {
+            margin-top: 40px;
             background: white;
+            padding: 25px;
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border:1px solid #bfdbfe;
         }
-        .section h2 {
-            color: #2952cc;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 12px;
-        }
-        .btn {
-            display: inline-block;
-            background: #2952cc;
-            color: white;
-            padding: 14px 24px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 10px 5px;
-            transition: 0.3s;
-            font-size: 1.05rem;
-        }
-        .btn:hover {
-            background: #1e40a0;
-            transform: translateY(-4px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-        }
-        .btn-success {
-            background: #28a745;
-        }
-        .btn-success:hover {
-            background: #218838;
-        }
-        .btn-info {
-            background: #17a2b8;
-        }
-        iframe {
+        table {
             width: 100%;
-            height: 680px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
+            border-collapse: collapse;
             margin-top: 15px;
+        }
+        table th, table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        table th {
+            background: #f8f9fa;
+            color: #1e40af;
+            font-weight: 600;
+        }
+        table tbody tr:hover {
+            background: #f0f4f8;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        footer{
+            margin-top:50px;
+            background:#1e2937;
+            color:#e0f2fe;
+            text-align:center;
+            padding:22px;
+        }
+        @media(max-width:768px){
+            header h1 { font-size:24px; }
         }
     </style>
 </head>
 <body>
+<header>
+    <h1><i class="fas fa-file-signature"></i> Notulensi & Integrasi Data POKLAHSAR</h1>
+    <p>Sistem Informasi Kelompok Pengolah dan Pemasar Hasil Perikanan</p>
+</header>
 
 <div class="container">
-    <h1><i class="fas fa-wallet"></i> Simpan Pinjam Anggota POKLAHSAR</h1>
+    <h2 class="section-title">Menu Integrasi Data & Notulensi</h2>
+    
+    <div class="cards">
+        <!-- Card Pendaftaran -->
+        <div class="card">
+            <a href="https://forms.gle/eCKEEYWjmUHXacL29" target="_blank">
+                <i class="fas fa-user-plus"></i>
+                <h3>Form Pendaftaran</h3>
+                <p>Isi formulir pendaftaran anggota/peserta.</p>
+            </a>
+        </div>
+        
+        <div class="card">
+            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRVG13QgcDQRKCriRLZrhXiXY07JbnNzQOdvXPB_nV8qRxKN5nJ1GVljaHZ1o0ThZosUj5RibrcdrGx/pubhtml" target="_blank">
+                <i class="fas fa-file-excel"></i>
+                <h3>Data Pendaftaran</h3>
+                <p>Hasil rekapitulasi spreadsheet pendaftaran.</p>
+            </a>
+        </div>
 
-    <!-- 1. Form Pendaftaran -->
-    <div class="section">
-        <h2><i class="fas fa-user-plus"></i> 1. Form Pendaftaran Simpan Pinjam</h2>
-        <a href="https://forms.gle/SVU4L2kc4JeXphMfA" target="_blank" class="btn">
-            <i class="fas fa-edit"></i> Isi Form Pendaftaran
-        </a>
+        <!-- Card Survei Kepuasan -->
+        <div class="card">
+            <a href="https://forms.gle/hRLPfW93ujKavEdd7" target="_blank">
+                <i class="fas fa-smile"></i>
+                <h3>Survey Kepuasan</h3>
+                <p>Formulir survei tingkat kepuasan peserta.</p>
+            </a>
+        </div>
+        
+        <div class="card">
+            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRc5XIHB9Uavar9Ux0OKOhEhDb2RU0-wSi5O6F1tBtIRAFW9CKnHKNsK9Qau0TVnHqBNLa3MMoKREyw/pubhtml" target="_blank">
+                <i class="fas fa-table"></i>
+                <h3>Data Survey Kepuasan</h3>
+                <p>Hasil spreadsheet survei kepuasan.</p>
+            </a>
+        </div>
+
+        <!-- Dashboard Looker Studio -->
+        <div class="card">
+            <a href="https://datastudio.google.com/embed/reporting/0a3f4b3d-efc0-4205-b2d2-0f56f255fb46/page/page_12345" target="_blank">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Dashboard Pendaftaran</h3>
+                <p>Visualisasi data pendaftaran (Looker Studio).</p>
+            </a>
+        </div>
+        
+        <div class="card">
+            <a href="https://datastudio.google.com/embed/reporting/6ddb071c-330a-45f0-b41d-ec15152e45a3/page/page_12345" target="_blank">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Dashboard Kepuasan</h3>
+                <p>Visualisasi hasil survei kepuasan.</p>
+            </a>
+        </div>
+
+        <!-- Analisis -->
+        <div class="card">
+            <a href="TINGKAT KEPUASAN NOTULENSI RAPAT.xlsx" target="_blank">
+                <i class="fas fa-file-excel"></i>
+                <h3>Hasil Analisis Excel</h3>
+                <p>Rekapitulasi dan analisis data lengkap.</p>
+            </a>
+        </div>
     </div>
 
-    <!-- 2. Data Pendaftaran -->
-    <div class="section">
-        <h2><i class="fas fa-table"></i> 2. Data Pendaftaran Simpan Pinjam</h2>
-        <a href="https://docs.google.com/spreadsheets/d/1xkkW0MT_WndFe1zq9aDmquDkALTPnsM-vXsUQECYGmM/edit?usp=sharing" 
-           target="_blank" class="btn">
-            <i class="fas fa-table"></i> Lihat Data Spreadsheet
-        </a>
+    <!-- Arsip Notulensi -->
+    <h2 class="section-title" style="margin-top:50px;">Arsip Notulensi Rapat</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Tanggal Rapat</th>
+                    <th>Agenda / Pembahasan</th>
+                    <th>Pimpinan Rapat</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>10 Juni 2026</td>
+                    <td>Pembentukan Panitia & Sosialisasi Pendaftaran</td>
+                    <td>Ketua POKLAHSAR</td>
+                    <td><span class="badge" style="background:#e6f4ea; color:#137333;">Selesai</span></td>
+                    <td><a href="#" style="color:#1e40af;"><i class="fas fa-eye"></i> Detail</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>15 Juni 2026</td>
+                    <td>Evaluasi Hasil Survei Kepuasan Bulan Mei</td>
+                    <td>Sekretaris Kelompok</td>
+                    <td><span class="badge" style="background:#e6f4ea; color:#137333;">Selesai</span></td>
+                    <td><a href="#" style="color:#1e40af;"><i class="fas fa-eye"></i> Detail</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>20 Juni 2026</td>
+                    <td>Analisis Data Produksi (Review File Excel)</td>
+                    <td>Divisi Pemasaran</td>
+                    <td><span class="badge" style="background:#fff0f1; color:#d93025;">Pending</span></td>
+                    <td><a href="#" style="color:#1e40af;"><i class="fas fa-eye"></i> Detail</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <!-- 3. Visualisasi Pendaftaran -->
-    <div class="section">
-        <h2><i class="fas fa-chart-pie"></i> 3. Visualisasi Data Pendaftaran</h2>
-        <a href="https://datastudio.google.com/reporting/6995eabe-d8fe-48eb-87cb-c32c4c0bf9e7" 
-           target="_blank" class="btn btn-info">
-            <i class="fas fa-chart-bar"></i> Lihat Dashboard Looker Studio
-        </a>
+    <div class="info">
+        <h2>Tentang Halaman Ini</h2>
+        <p>
+            Halaman ini digunakan untuk mengelola notulensi rapat, integrasi data formulir, 
+            serta visualisasi dan analisis data POKLAHSAR.
+        </p>
     </div>
-
-    <!-- 4. Survey Kepuasan -->
-    <div class="section">
-        <h2><i class="fas fa-smile"></i> 4. Survey Tingkat Kepuasan</h2>
-        <a href="https://forms.gle/jDrarFrtbcEn9kAc9" target="_blank" class="btn btn-success">
-            <i class="fas fa-poll"></i> Isi Survey Kepuasan
-        </a>
-    </div>
-
-    <!-- 5. Data Survey Kepuasan -->
-    <div class="section">
-        <h2><i class="fas fa-table"></i> 5. Data Survey Kepuasan</h2>
-        <a href="https://docs.google.com/spreadsheets/d/15VXtdYKqxzrwvmAMjjYeTardwSK3BtnH74FnkrKn4K8/edit?usp=sharing" 
-           target="_blank" class="btn">
-            <i class="fas fa-table"></i> Lihat Data Spreadsheet Kepuasan
-        </a>
-    </div>
-
-    <!-- 6. Visualisasi Kepuasan -->
-    <div class="section">
-        <h2><i class="fas fa-chart-bar"></i> 6. Visualisasi Survey Kepuasan</h2>
-        <a href="https://datastudio.google.com/reporting/355c4ec4-cc48-4598-b9c4-e5311d4aa93e" 
-           target="_blank" class="btn btn-info">
-            <i class="fas fa-chart-bar"></i> Lihat Dashboard Looker Studio
-        </a>
-    </div>
-
-    <!-- 7. Hasil Analisis -->
-    <div class="section">
-        <h2><i class="fas fa-file-excel"></i> 7. Hasil Analisis Simpan Pinjam</h2>
-        <a href="https://docs.google.com/spreadsheets/d/1fiwfP9m6EPaaA5MUommdlJjq8MmTcdPS/edit?usp=sharing" 
-           target="_blank" class="btn">
-            <i class="fas fa-download"></i> Lihat Hasil Analisis Excel
-        </a>
-    </div>
-
 </div>
 
+<footer>
+    ©️ 2026 Noer Mayadha | Sistem Informasi POKLAHSAR
+</footer>
 </body>
 </html>
